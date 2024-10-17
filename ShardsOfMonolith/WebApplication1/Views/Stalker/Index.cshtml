@@ -1,5 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IEnumerable<ShardsOfMonolith.Models.Stalker.StalkerIndexViewModel>
+
+@{ int rowNumber = 1; }
+<div> </div>
+@* User can go on mission usind ADD functions, to obtain a new Stalker. In controller, this called "PlayerSoloMod" *@
+
+<div>class"h1"Your Stalker:</div>
+<form method="post">
+    <table> class="table table-hover"
+        <thead>
+            <tr>
+                @*Later, once images have been implemented, add image here aswell*@
+                <th>scope="col>#"</th>
+                <th>scope="col>Name"</th>
+                <th>scope="col>Type"</th>
+                <th>scope="col>Level"</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stalker in Model)
+            {
+                <tr>
+                    @*Later, once images have been implemented, add image here aswell*@
+                    <td>@rowNumber</td>
+                    <td>@StalkerName</td>
+                    <td>@StalkerType</td>
+                    <td>@StalkerLevel</td>
+                </tr>
+                rowNumber++;
+            }
+        </tbody>
+    </table> 
+</form>
+@* Missing Button for player profile *@
+@* Missing Button for solar system page *@
+@* Missing Button for player activity history *@
