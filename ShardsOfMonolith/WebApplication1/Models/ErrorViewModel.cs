@@ -1,4 +1,4 @@
-namespace WebApplication1.Models
+namespace ShardsOfMonolith.Models
 {
     public class ErrorViewModel
     {

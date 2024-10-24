@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShardsOfMonolith.ApplicationServices\ShardsOfMonolith.ApplicationServices.csproj" />
     <ProjectReference Include="..\ShardsOfMonolith.Date\ShardsOfMonolith.Date.csproj" />
   </ItemGroup>
 

@@ -1,12 +1,17 @@
 using Microsoft.EntityFrameworkCore;
-using ShardsOfMonolith.Date;
+using Microsoft.Extensions.DependencyInjection;
+using ShardsOfMonolith.ApplicationServices.Services;
+using ShardsOfMonolith.Core.ServiceInterface;
+using ShardsOfMonolith.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IStalkersServices, StalkersServices>();
+
 builder.Services.AddDbContext<ShardsOfMonolithContext>(
-    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DeafaultConnection")));
+    Options => Options.UseSqlServer(builder.Configuration.GetConnectionString("DeafaultConnection")));
 
 var app = builder.Build();
 

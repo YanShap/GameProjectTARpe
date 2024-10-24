@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ShardsOfMonolith.Date
+namespace ShardsOfMonolith.Data
 {
     public class ShardsOfMonolithContext : DbContext
     {
+        public ShardsOfMonolithContext(DbContextOptions<ShardsOfMonolithContext> options) : base(options) {}
         public DbSet<Stalker> Stalkers { get; set; }
+        public DbSet<FileToDatabase> FilesToDatabase { get; set; }
     }
 }

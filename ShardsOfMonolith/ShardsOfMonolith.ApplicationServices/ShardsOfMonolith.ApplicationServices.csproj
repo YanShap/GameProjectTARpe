@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShardsOfMonolith.Core\ShardsOfMonolith.Core.csproj" />
+    <ProjectReference Include="..\ShardsOfMonolith.Date\ShardsOfMonolith.Date.csproj" />
+  </ItemGroup>
+
 </Project>

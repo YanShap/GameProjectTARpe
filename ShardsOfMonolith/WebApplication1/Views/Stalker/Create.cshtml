@@ -1,0 +1,83 @@
+﻿@model ShardsOfMonolith.Models.Stalkers.StalkerCreateViewModel
+<div>
+    
+    <form method="post" enctype="multipart/from-data">
+        <input asp-for="CreatedAt" type="hideen"/>
+        <input asp-for="UpdateAt" type="hideen"/>
+        <input asp-for="StalkerXP" value="0" type="hideen" />
+        <input asp-for="StalkerLevel" value="0" type="hideen" />
+        <input asp-for="StalkerXPNextLevel" value="100" type="hideen" />
+        <input asp-for="@Model.StalkerStatus" value="Alive" type="hideen" />
+       
+
+        
+        <div class="from-group-row">
+            <label asp-for="StalkerName" calss="col-sm-2 col-from-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="StalkerName" calss="from-control"/>
+                </div>
+        </div>
+
+
+        <div class="from-group-row">
+            <label asp-for="StalkerType" calss="col-sm-2 col-from-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="Stalkertype" calss="from-control" />
+            </div>
+        </div>
+
+        <div class="from-group-row">
+            <label asp-for="StalkerAttackName" calss="col-sm-2 col-from-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="StalkerAttackName" calss="from-control" />
+            </div>
+        </div>
+
+        <div class="from-group-row">
+            <label asp-for="StalkerAttackPower" calss="col-sm-2 col-from-label"></label>
+            <div class="col-sm-10">
+                <input asp-for="StalkerAttackPower" calss="from-control" />
+            </div>
+        </div>
+
+        <div class="from-group-row">
+            <label asp-for="Files" class="col-sm-2 vol-form-label"></label>
+            <div calss="col-sm-5">
+                <div calss="custom-file">
+                    <input
+                        class="form-control custom-file-input"
+                        asp-for="Files"
+                        multiple type="file"
+                        />
+                        <label calss="cutom-file-label">Choose Images from device -></label>
+                 </div>
+             </div>
+
+        </div>
+        <a asp-action="create" asp-controller="stalkers" type="sumbit"
+        class="btn btn-primary" value="Make Stalker"></a>
+        <a asp-action="index" class="btn btn-primary">Cancel</a>
+
+     </form>
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function)()
+        {
+    $('.custom-file-input').on("change", function () {
+        var fileLabel = $(this).next('.custom-file-input');
+        var files = $(this)[0].files;
+        if (files.lenght > 1) {
+            fileLabel.html(files.lenght + ' files selected');
+        }
+        else if (files.lenght == 1) {
+            fileLabel.html(files[0].name);
+        }
+    )};
+        )};
+
+    </script>
+
+}

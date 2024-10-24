@@ -1,16 +1,6 @@
-﻿
-namespace ShardsOfMonolith.Models.Stalker
+﻿namespace ShardsOfMonolith.Models.Stalker
 {
-    public enum StalkerType
-    {
-        RejectedStalker, ResentfulStalker, PredatoryStalker, InitmacyStalker, InfectedStalker
-    }
-    public enum StalkerStatus
-    {
-        Dead, Alive, Guarding
-    }
-
-    public class StalkerIndexViewModel
+    public class StalkerCreateViewModel
     {
         public Guid ID { get; set; }
 
@@ -36,14 +26,14 @@ namespace ShardsOfMonolith.Models.Stalker
 
         public DateTime StalkerDied { get; }
 
+        public List<IFormFile> Files { get; set; }
+
+        public List<StalkerImageViewModel> Images { get; set; } = new List<StalkerImageViewModel>();
+
         //db only 
         public DateTime CreatedAt { get; set; }
 
         public DateTime UpdatedAt { get; set; }
-
-
-
-
 
 
 

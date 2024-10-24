@@ -1,5 +1,11 @@
-﻿
-namespace ShardsOfMonolith.Models.Stalker
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ShardsOfMonolith.Core.Dto
 {
     public enum StalkerType
     {
@@ -10,7 +16,7 @@ namespace ShardsOfMonolith.Models.Stalker
         Dead, Alive, Guarding
     }
 
-    public class StalkerIndexViewModel
+    public class StalkerDto
     {
         public Guid ID { get; set; }
 
@@ -35,6 +41,9 @@ namespace ShardsOfMonolith.Models.Stalker
         public DateTime StalkerWasBorn { get; set; }
 
         public DateTime StalkerDied { get; }
+
+        public List<IFormFile> Files { get; set; }
+        public IEnumerable<FileToDatabaseDto> Image {  get; set; } = new List<FileToDatabaseDto>();
 
         //db only 
         public DateTime CreatedAt { get; set; }
